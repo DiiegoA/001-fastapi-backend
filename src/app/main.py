@@ -61,4 +61,5 @@ app.include_router(todos.router, tags=["Todos"])  # Tag para organizar docs
 @app.get("/", tags=["Health Check"])
 def read_root():
     logger.info("📢 Endpoint raíz llamado")
-    return {"message": f"{settings.project_name} funcionando 🚀"}
+    return {"message": f"{settings.PROJECT_NAME} funcionando 🚀"}
+
