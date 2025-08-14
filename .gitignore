@@ -1,0 +1,22 @@
+# Entornos virtuales
+.venv/
+.env
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Configuración local
+poetry.lock
+
+# Archivos de vscode
+.vscode/
+
+# Archivos de logs
+app.log

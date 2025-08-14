@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:17
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: todo_user
+      POSTGRES_PASSWORD: Lauracamila95*
+      POSTGRES_DB: fastapi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+  backend:
+    build: .
+    container_name: fastapi_backend
+    depends_on:
+      - db
+    environment:
+      PROJECT_NAME: "FastAPI Backend"
+      DEBUG: "False"
+      DATABASE_URL: "postgresql+psycopg2://todo_user:Lauracamila95*@db:5432/fastapi_db"
+      LOG_LEVEL: "INFO"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+
+volumes:
+  postgres_data:
