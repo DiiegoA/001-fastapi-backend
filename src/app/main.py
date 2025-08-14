@@ -8,6 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from pydantic import ValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from app.core.logging_config import logger
+from app.db.init_db import init_db  # <-- Importa la función que crea tablas
 
 app = FastAPI(
     title="Todo API - FastAPI Backend",
@@ -50,6 +51,8 @@ app.add_exception_handler(ValidationError, handlers.pydantic_validation_error_ha
 @app.on_event("startup")
 async def startup_event():
     logger.info("🚀 Aplicación iniciada")
+    logger.info("📦 Creando tablas en la base de datos si no existen...")
+    init_db()  # <-- Crea las tablas automáticamente
 
 @app.on_event("shutdown")
 async def shutdown_event():
@@ -62,4 +65,3 @@ app.include_router(todos.router, tags=["Todos"])  # Tag para organizar docs
 def read_root():
     logger.info("📢 Endpoint raíz llamado")
     return {"message": f"{settings.PROJECT_NAME} funcionando 🚀"}
-
