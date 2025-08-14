@@ -7,4 +7,5 @@ services:
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: DATABASE_URL
-        value: "postgresql+psycopg2://usuario:password@host:puerto/db"
+        value: "postgresql+psycopg2://todo_user:Lauracamila95*@dpg-abc12345abcdef.render.com:5432/todos_db
+"
