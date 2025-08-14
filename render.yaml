@@ -4,8 +4,9 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
+    startCommand: "startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000 --app-dir src"
+
     envVars:
       - key: DATABASE_URL
-        value: "postgresql+psycopg2://todo_user:Lauracamila95*@dpg-abc12345abcdef.render.com:5432/todos_db"
+        value: "postgresql+psycopg2://todo_utodos_db_pdyo_userser:o2K4wauF3frSXrG5maE5qRTVqkWAHOL3@dpg-d2f3e46mcj7s7388ji5g-a.render.com:5432/todos_db_pdyo"
 "
