@@ -8,6 +8,4 @@ services:
 
     envVars:
       - key: DATABASE_URL
-        value: "postgresql+psycopg2://todos_db_pdyo_user:o2K4wauF3frSXrG5maE5qRTVqkWAHOL3@dpg-d2f3e46mcj7s7388ji5g-a.render.com:5432/todos_db_pdyo"
-"
-"
+        value: "postgresql+psycopg2://todos_db_pdyo_user:o2K4wauF3frSXrG5maE5qRTVqkWAHOL3@dpg-d2f3e46mcj7s7388ji5g-a.oregon-postgres.render.com:5432/todos_db_pdyo"
